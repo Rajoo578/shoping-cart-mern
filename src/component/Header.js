@@ -62,7 +62,7 @@ const Header = () => {
                     to={"newproduct"}
                     className="whitespace-nowrap cursor-pointer px-2"
                   >
-                    New product
+                    New product.
                   </Link>
                 )}
 

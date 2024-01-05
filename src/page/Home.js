@@ -6,7 +6,6 @@ import { GrPrevious, GrNext } from "react-icons/gr";
 import FilterProduct from "../component/FilterProduct";
 import AllProduct from "../component/AllProduct";
 
-
 const Home = () => {
   const productData = useSelector((state) => state.product.productList);
   const homeProductCartList = productData.slice(1, 5);
@@ -25,14 +24,6 @@ const Home = () => {
     slideProductRef.current.scrollLeft -= 200;
   };
 
-
- 
-
-
-  
-
-
-
   return (
     <div className="p-2 md:p-4">
       <div className="md:flex gap-4 py-2">
@@ -49,11 +40,10 @@ const Home = () => {
             <span className="text-red-600 text-">Your Home</span>
           </h2>
           <p className="py-3 text-base ">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries
+            Customers don't need to go outside, so they can save transportation
+            costs, whereas retailers do not need huge space for a showroom to
+            save their holding costs. Moreover, in the food supply chain,
+            retailers can save their labor costs with a home delivery polic
           </p>
           <button className="font-bold bg-red-500 text-slate-200 px-4 py-2 rounded-md">
             Order Now
@@ -75,7 +65,9 @@ const Home = () => {
                 );
               })
             : loadingArray.map((el, index) => {
-                return <HomeCard key={index+"loading"} loading={"Loading..."} />;
+                return (
+                  <HomeCard key={index + "loading"} loading={"Loading..."} />
+                );
               })}
         </div>
       </div>
@@ -108,7 +100,7 @@ const Home = () => {
             ? homeProductCartListVegetables.map((el) => {
                 return (
                   <CardFeature
-                    key={el._id+"vegetable"}
+                    key={el._id + "vegetable"}
                     id={el._id}
                     name={el.name}
                     category={el.category}
@@ -117,13 +109,13 @@ const Home = () => {
                   />
                 );
               })
-            : loadingArrayFeature.map((el,index) => (
-                <CardFeature loading="Loading..." key={index+"cartLoading"} />
+            : loadingArrayFeature.map((el, index) => (
+                <CardFeature loading="Loading..." key={index + "cartLoading"} />
               ))}
         </div>
       </div>
-      
-      <AllProduct heading={"Your Product"}/>
+
+      <AllProduct heading={"Your Product"} />
     </div>
   );
 };
